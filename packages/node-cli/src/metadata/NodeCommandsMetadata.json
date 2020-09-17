@@ -98,9 +98,9 @@
             }
         ]
     },
-    "project:publish": {
-        "name": "project:publish",
-        "description": "Publishes SuiteApp to SuiteApp Control Center.",
+    "project:upload": {
+        "name": "project:upload",
+        "description": "Uploads SuiteApp to SuiteApp Control Center.",
         "isSetupRequired": true,
         "options": [
             {

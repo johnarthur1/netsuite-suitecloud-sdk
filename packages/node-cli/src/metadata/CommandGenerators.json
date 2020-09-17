@@ -63,7 +63,7 @@
         "nonInteractiveGenerator": "commands/ValidateCommandGenerator"
     },
     {
-        "commandName": "project:publish",
+        "commandName": "project:upload",
         "interactiveGenerator": "commands/PublishCommandGenerator",
         "nonInteractiveGenerator": "commands/PublishCommandGenerator"
     }

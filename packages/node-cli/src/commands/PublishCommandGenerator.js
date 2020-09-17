@@ -30,16 +30,16 @@ module.exports = class PublishCommandGenerator extends BaseCommandGenerator {
             {
                 type: CommandUtils.INQUIRER_TYPES.LIST,
                 name: 'nsversion',
-                message: "What is the minimal required NetSuite version for this SuiteApp",
+                message: "Select minimal required NetSuite version for your SuiteApp",
                 choices: [
-                    '2020.1',
-                    '2020.2'
+                    '2020.2',
+                    '2021.1'
                 ]
             },
             {
                 type: CommandUtils.INQUIRER_TYPES.LIST,
                 name: 'phasing',
-                message: 'What is your SuiteApp phase',
+                message: 'Select the phase of your SuiteApp',
                 choices: [
                     'Leading',
                     'Lagging'
@@ -59,17 +59,17 @@ module.exports = class PublishCommandGenerator extends BaseCommandGenerator {
 
         await executeWithSpinner({
             action: new Promise((resolve, reject) => setTimeout(() => resolve(), 5000)),
-            message: 'Validating project...',
+            message: 'Validating SuiteApp...',
         });
 
         await executeWithSpinner({
             action: new Promise((resolve, reject) => setTimeout(() => resolve(), 3000)),
-            message: 'Packaging project...',
+            message: 'Packaging SuiteApp...',
         });
 
         await executeWithSpinner({
             action: new Promise((resolve, reject) => setTimeout(() => resolve(), 5000)),
-            message: 'Uploading project to SuiteApp control center...',
+            message: 'Uploading SuiteApp to SuiteApp Control Center...',
         });
 
         return Promise.resolve(actionResult);
@@ -82,7 +82,7 @@ module.exports = class PublishCommandGenerator extends BaseCommandGenerator {
         const appId = this._projectInfoService.getApplicationId();
 
         NodeUtils.println(
-            `SuiteApp with application ID: ${appId} and version: ${version} has been successfully uploaded to control center.`,
+            `SuiteApp ${appId} v.${version} has been successfully uploaded to SuiteApp Control Center.`,
             NodeUtils.COLORS.INFO
         );
     }
